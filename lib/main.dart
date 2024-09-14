@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_application_1/pages/User_info.dart';
-import 'package:lotto_application_1/pages/User_status.dart';
+import 'package:lotto_application_1/user_pages/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,10 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp( 
       title: 'Lotto Web',
-       routes: {
-        '/user-status': (context) => const User_status(),
-      },
-      home: const User_info(),
+      home: LoginPage(),
       theme: ThemeData(
         primaryColor: Colors.white,
         scaffoldBackgroundColor: Colors.white,

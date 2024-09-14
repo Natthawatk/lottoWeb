@@ -1,0 +1,21 @@
+[
+    {
+      "user_id": 1,
+      "username": "top",
+      "email": "top@",
+      "password": "1234",
+      "phone": "1234567890",
+      "balance": 600,
+      "position": "admin"
+    },
+    {
+      "user_id": 2,
+      "username": "user2",
+      "email": "user2@example.com",
+      "password": "password456",
+      "phone": "0987654321",
+      "balance": 700,
+      "position": "user"
+    }
+  ]
+  

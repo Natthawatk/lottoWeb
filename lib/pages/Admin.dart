@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_application_1/pages/User_status.dart';
+import 'package:lotto_application_1/pages/User_info.dart';
+import 'package:lotto_application_1/user_pages/login.dart';
 
 // ignore: camel_case_types
-class User_info extends StatelessWidget {
-  const User_info({super.key});
+class Admin extends StatelessWidget {
+  const Admin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,7 @@ class User_info extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                goToUserStatus(context);  // Corrected way of passing function reference
+                // Define action on tap if needed
               },
               child: Container(
                 decoration: BoxDecoration(
@@ -96,39 +97,44 @@ class User_info extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20), // Space between Container elements
+            ElevatedButton(
+              onPressed: () {
+                // Action for User Information button
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => User_info()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                foregroundColor: const Color.fromARGB(255, 0, 0, 0), backgroundColor: const Color.fromARGB(255, 255, 255, 255), // Text color
+                minimumSize: Size(600, 50), // Button size
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12), // Rounded corners
+                ),
+              ),
+              child: const Text('ข้อมูลผู้ใช้งาน'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                // Action for Logout button
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
+                style: ElevatedButton.styleFrom(
+                foregroundColor: Color.fromARGB(255, 255, 0, 0), backgroundColor: const Color.fromARGB(255, 255, 255, 255), // Text color
+                minimumSize: Size(600, 50), // Button size
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12), // Rounded corners
+                ),
+              ),
+              child: const Text('ออกจากระบบ'),
+            ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: 'List',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.refresh),
-            label: 'Reset',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Profile',
-          ),
-        ],
-      ),
     );
-  }
-
-  // This function requires the context to navigate to another page.
-  void goToUserStatus(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const User_status(status: ''),
-      ),
-    ); // Push a new page.
   }
 }
