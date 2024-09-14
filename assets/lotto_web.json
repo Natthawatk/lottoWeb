@@ -1,0 +1,100 @@
+[
+    {
+        "type": "header",
+        "version": "5.2.1",
+        "comment": "Export to JSON plugin for PHPMyAdmin"
+    },
+    {
+        "type": "database",
+        "name": "lotto_web"
+    },
+    {
+        "type": "table",
+        "name": "draws",
+        "database": "lotto_web",
+        "data": [
+            {
+                "draw_id": "1",
+                "winning_numbers": "109801",
+                "prize_pool": "100000"
+            }
+        ]
+    },
+    {
+        "type": "table",
+        "name": "lotto_tickets",
+        "database": "lotto_web",
+        "data": [
+            {
+                "ticket_id": "5",
+                "numbers": "215081",
+                "status_ticket": "available",
+                "price": "80"
+            },
+            {
+                "ticket_id": "6",
+                "numbers": "109801",
+                "status_ticket": "purchased",
+                "price": "80"
+            }
+        ]
+    },
+    {
+        "type": "table",
+        "name": "transactions",
+        "database": "lotto_web",
+        "data": [
+            {
+                "transaction_id": "1",
+                "user_id": "2",
+                "amount": "100000.00",
+                "status": "pending"
+            },
+            {
+                "transaction_id": "2",
+                "user_id": "2",
+                "amount": "20000.00",
+                "status": "completed"
+            }
+        ]
+    },
+    {
+        "type": "table",
+        "name": "users",
+        "database": "lotto_web",
+        "data": [
+            {
+                "user_id": "1",
+                "username": "natthawat",
+                "email": "natthawat@gmail.com",
+                "password": "art123",
+                "phone": "070 0591 8249",
+                "balance": "12000",
+                "position": "admin"
+            },
+            {
+                "user_id": "2",
+                "username": "aa",
+                "email": "sdasdsda@gmail.com",
+                "password": "1234",
+                "phone": "662 6116510",
+                "balance": "12000",
+                "position": "user"
+            }
+        ]
+    },
+    {
+        "type": "table",
+        "name": "winners",
+        "database": "lotto_web",
+        "data": [
+            {
+                "winner_id": "1",
+                "user_id": "2",
+                "draw_id": "1",
+                "prize_amount": "100000.00",
+                "claimed": "0"
+            }
+        ]
+    }
+]
